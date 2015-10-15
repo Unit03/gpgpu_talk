@@ -1,10 +1,13 @@
 (py)OpenCL Examples
 ===================
 
+Please note, you must have working ``OpenCL`` installed on your system, along
+with proper Installable Client Driver (ICD).
+
 Python
 ------
 
-First, install depencies::
+First, install dependencies::
 
    pip install numpy pyopencl pytest
 
@@ -19,9 +22,10 @@ or ``py.test`` to run all examples::
 C
 -
 
-Compile::
+Go to ``examples`` directory, compile::
 
-   gcc -std=c99 examples/vectors_cl.c -o vectors_cl -l OpenCL
+   cd examples/
+   gcc -std=c99 vectors_cl.c -o vectors_cl -l OpenCL
 
 and run::
 
