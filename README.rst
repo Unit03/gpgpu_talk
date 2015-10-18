@@ -4,8 +4,8 @@
 Please note, you must have working ``OpenCL`` installed on your system, along
 with proper Installable Client Driver (ICD).
 
-Python
-------
+Python (2/3)
+------------
 
 First, install dependencies::
 
