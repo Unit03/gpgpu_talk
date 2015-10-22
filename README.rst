@@ -1,6 +1,9 @@
 (py)OpenCL Examples
 ===================
 
+Used in `(py)OpenCL on video cards: GPGPU intro
+<http://kolodziejj.info/talks/gpgpu/>`_ talk (polish only).
+
 Please note, you must have working ``OpenCL`` installed on your system, along
 with proper Installable Client Driver (ICD).
 
