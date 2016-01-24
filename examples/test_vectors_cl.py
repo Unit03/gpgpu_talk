@@ -40,8 +40,7 @@ def add(a, b):
         )
 
     # Execute the kernel.
-    program.add(queue, a.shape, None, a_in, b_in, numpy.uint32(ARRAY_SIZE),
-                c_out)
+    program.add(queue, a.shape, None, a_in, b_in, numpy.uint32(a.size), c_out)
 
     # Create empty numpy array on the host for result.
     c = numpy.empty_like(a)
@@ -76,8 +75,8 @@ def test_add():
 
     assert c[0] == 0
     assert c[1] == 3
-    assert c[-2] == 12282
-    assert c[-1] == 12285
+    assert c[-2] == 3 * (ARRAY_SIZE - 2)
+    assert c[-1] == 3 * (ARRAY_SIZE - 1)
 
 
 if __name__ == "__main__":
