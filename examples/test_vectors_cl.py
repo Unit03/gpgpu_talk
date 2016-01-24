@@ -14,12 +14,9 @@ def add(a, b):
     queue = pyopencl.CommandQueue(context)
 
     # Build the "program".
-    program = pyopencl.Program(
-        context,
-        open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                          "vectors_cl.cl")
-        ).read()
-    ).build()
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                           "vectors_cl.cl")) as kernel_file:
+        program = pyopencl.Program(context, kernel_file.read()).build()
 
     # Create two readable buffers on the device memory and copy the input data
     # there.
